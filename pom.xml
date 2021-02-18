@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itmoprofessionals</groupId>
+    <artifactId>softwaretest</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.6.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>apploidx</id>
+            <name>Arthur Kupriyanov</name>
+            <email>apploidyakutsk@gmail.com</email>
+            <properties>
+                <picUrl>https://avatars.githubusercontent.com/u/32590754?s=460&amp;u=73a43c1d8fb206cf85d334e3b112017680fdc4e6&amp;v=4</picUrl>
+            </properties>
+        </developer>
+        <developer>
+            <id>mashinakatherina</id>
+            <name>Katerina Mashina</name>
+            <email>mashina.katherina@gmail.com</email>
+            <properties>
+                <picUrl>https://avatars.githubusercontent.com/u/29121264?s=460&amp;u=a982d0630a7d4870fae92b857efa5d84ea53f490&amp;v=4</picUrl>
+            </properties>
+        </developer>
+    </developers>
+
+</project>
