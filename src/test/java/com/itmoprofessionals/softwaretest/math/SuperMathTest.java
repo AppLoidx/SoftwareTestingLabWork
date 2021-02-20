@@ -25,6 +25,14 @@ class SuperMathTest {
     }
 
     @Test
+    void sin_InfTest() {
+        assertEquals(Double.NaN, SuperMath.sin(Double.NEGATIVE_INFINITY));
+        assertEquals(Double.NaN, SuperMath.sin(Double.POSITIVE_INFINITY));
+    }
+
+
+
+    @Test
     void sin_sampleTestHalfPI() {
         assertEquals(1, SuperMath.sin(Math.PI / 2), sinDelta);
     }
