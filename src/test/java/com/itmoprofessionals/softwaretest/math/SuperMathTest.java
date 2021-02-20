@@ -42,6 +42,11 @@ class SuperMathTest {
     }
 
     @Test
+    void sin_bugSpecialCase() {
+        assertEquals(0.09983341664682804, SuperMath.sin(-6.183185307179587), SIN_DELTA);
+    }
+
+    @Test
     void sin_sampleTestPI() {
         assertEquals(0, SuperMath.sin(Math.PI), SIN_DELTA);
     }
