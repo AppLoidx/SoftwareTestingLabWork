@@ -1,12 +1,18 @@
 package com.itmoprofessionals.softwaretest.math;
 
+import au.com.bytecode.opencsv.CSVReader;
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SuperMathTest {
 
-    private final double sinDelta = 0.001;
+    private static final double SIN_DELTA = 0.001;
+    private static final String RESOURCES_PATH = "src/test/resources";
 
     @Test
     void sin_zeroTest() {
@@ -30,19 +36,27 @@ class SuperMathTest {
         assertEquals(Double.NaN, SuperMath.sin(Double.POSITIVE_INFINITY));
     }
 
-
-
     @Test
     void sin_sampleTestHalfPI() {
-        assertEquals(1, SuperMath.sin(Math.PI / 2), sinDelta);
+        assertEquals(1, SuperMath.sin(Math.PI / 2), SIN_DELTA);
     }
 
     @Test
     void sin_sampleTestPI() {
-        assertEquals(0, SuperMath.sin(Math.PI), sinDelta);
+        assertEquals(0, SuperMath.sin(Math.PI), SIN_DELTA);
     }
 
     // TODO: write more sin test
+
+    @Test
+    void sin_datasetTest() throws IOException {
+        File file = new File(RESOURCES_PATH + "/data.csv");
+        CSVReader csvReader = new CSVReader(new FileReader(file), ',', '"', 1);
+        String[] nextLine;
+        while ((nextLine = csvReader.readNext()) != null) {
+            assertEquals(Double.parseDouble(nextLine[2]), SuperMath.sin(Double.parseDouble(nextLine[1])), 0.1);
+        }
+    }
 
 
     // Zero one infinity rule
