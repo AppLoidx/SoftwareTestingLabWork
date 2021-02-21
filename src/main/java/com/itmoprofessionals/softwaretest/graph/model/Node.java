@@ -2,6 +2,9 @@ package com.itmoprofessionals.softwaretest.graph.model;
 
 import java.util.*;
 
+/**
+ * Graph's node
+ */
 public class Node {
     private final HashSet<Node> targets = new HashSet<>();
     private final int id;

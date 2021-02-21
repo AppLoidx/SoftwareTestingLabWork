@@ -10,6 +10,12 @@ public final class DFS {
 
     private DFS() {}
 
+    /**
+     * Applies DFS algorithm to graph (without recursion)
+     *
+     * @param startNode graph start node
+     * @param nodeObserver observer that will be applied to all visited nodes
+     */
     public static void applyTo(final Node startNode, final NodeObserver nodeObserver) {
 
         final Set<Node> visited = new HashSet<>();

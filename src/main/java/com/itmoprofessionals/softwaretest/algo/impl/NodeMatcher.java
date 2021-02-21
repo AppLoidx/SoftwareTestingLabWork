@@ -8,6 +8,15 @@ import java.util.function.Predicate;
 
 public final class NodeMatcher {
     private NodeMatcher() {}
+
+    /**
+     *
+     * Applies DFS algorithm to graph and matches the predicate
+     *
+     * @param startNode node to start DFS algorithm
+     * @param predicate predicate to match
+     * @return only matched nodes
+     */
     public static Set<Node> apply(Node startNode, Predicate<Node> predicate) {
 
         Set<Node> nodes = new HashSet<>();
