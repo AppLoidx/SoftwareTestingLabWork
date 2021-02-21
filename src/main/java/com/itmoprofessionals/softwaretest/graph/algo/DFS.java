@@ -1,4 +1,4 @@
-package com.itmoprofessionals.softwaretest.algo.impl;
+package com.itmoprofessionals.softwaretest.graph.algo;
 
 import com.itmoprofessionals.softwaretest.graph.model.Node;
 

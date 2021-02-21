@@ -1,5 +1,6 @@
-package com.itmoprofessionals.softwaretest.algo.impl;
+package com.itmoprofessionals.softwaretest.graph.algo;
 
+import com.itmoprofessionals.softwaretest.graph.algo.DFS;
 import com.itmoprofessionals.softwaretest.graph.model.Node;
 import com.itmoprofessionals.softwaretest.util.GraphUtil;
 import org.junit.jupiter.api.Test;
