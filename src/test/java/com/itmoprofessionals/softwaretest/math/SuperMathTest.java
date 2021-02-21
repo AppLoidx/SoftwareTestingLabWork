@@ -42,7 +42,7 @@ class SuperMathTest {
     }
 
     @Test
-    void sin_bugSpecialCase() {
+    void sin_taylorSpecialCase_ArgValueNear2PI() {
         assertFalse(Math.abs(0.09983341664682804 - SuperMath.sin(-6.183185307179587)) < SIN_DELTA);
     }
 
