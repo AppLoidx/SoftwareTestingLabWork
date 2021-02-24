@@ -1,18 +1,15 @@
 package com.itmoprofessionals.softwaretest.domain.object;
 
-import java.util.Objects;
+import com.itmoprofessionals.softwaretest.domain.context.Event;
+import com.itmoprofessionals.softwaretest.domain.context.EventType;
 
-public class Sun implements Burnable {
-    private final int sunId;
+public class Sun extends PhysicalObject implements Burnable {
+
     private boolean isBurning;
 
-    public Sun(int sunId, boolean isBurning) {
-        this.sunId = sunId;
+    public Sun(int objectId, boolean isBurning) {
+        super(objectId);
         this.isBurning = isBurning;
-    }
-
-    public int getSunId() {
-        return sunId;
     }
 
     public boolean isBurning() {
@@ -20,21 +17,14 @@ public class Sun implements Burnable {
     }
 
     @Override
-    public void burn(int sunId) {
+    public Event burn() {
         isBurning = true;
-        System.out.println("Sun number " + sunId + " start burning");
+        return Event.of("Sun number " + this.getId() + " start burning", EventType.BURN);
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Sun sun = (Sun) o;
-        return sunId == sun.sunId;
+    public Event appear() {
+        return Event.of("Sun number " + this.getId() + " is appeared", EventType.APPEAR);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(sunId);
-    }
 }

@@ -1,5 +1,5 @@
 package com.itmoprofessionals.softwaretest.domain.context;
 
 public enum EventType {
-    LIGHT, SPARK, APPEAR
+    LIGHT, SPARK, APPEAR, BURN
 }
