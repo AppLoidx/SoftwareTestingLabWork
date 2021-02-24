@@ -1,21 +1,19 @@
 package com.itmoprofessionals.softwaretest.graph.algo;
 
-import com.itmoprofessionals.softwaretest.graph.algo.DFS;
 import com.itmoprofessionals.softwaretest.graph.model.Node;
 import com.itmoprofessionals.softwaretest.util.GraphUtil;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 class DFSTest {
 
 
     @Test
-    void dfs_sampleCheck() {
+    void dfsSampleCheckTest() {
         Node sampleNode = GraphUtil.createSampleGraph();
         LinkedList<Node> path = new LinkedList<>();
         DFS.applyTo(sampleNode, path::add);
@@ -37,6 +35,36 @@ class DFSTest {
         assertEquals(5, path.get(3).getId());
         Node node5 = path.get(4);
         assertTrue(node5.getId() == 4 || node5.getId() == 3);
+    }
+
+    @Test
+    void dfsOneNodeTest() {
+        Node sampleNode = GraphUtil.createOneNodeGraph();
+        LinkedList<Node> path = new LinkedList<>();
+        DFS.applyTo(sampleNode, path::add);
+
+        assertEquals(1, path.size());
+        assertEquals(path.get(0).getId(), 1);
+    }
+
+    @Test
+    void dfsNoConnectivityNodeTest() {
+        Node sampleNode = GraphUtil.createNoConnectiveGraph();
+        LinkedList<Node> path = new LinkedList<>();
+        DFS.applyTo(sampleNode, path::add);
+
+        assertEquals(2, path.size());
+        assertNotEquals(path.get(0).getId(), 3);
+    }
+
+    @Test
+    void dfsCycleTest() {
+        Node sampleNode = GraphUtil.createSampleGraph();
+        LinkedList<Node> path = new LinkedList<>();
+        DFS.applyTo(sampleNode, path::add);
+
+        assertEquals(path.get(0).getId(), 1);
+        assertNotEquals(path.get(4).getId(), 1);
     }
 
 }

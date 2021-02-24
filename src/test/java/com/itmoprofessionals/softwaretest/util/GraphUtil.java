@@ -32,4 +32,19 @@ public final class GraphUtil {
 
         return startNode;
     }
+
+    public static Node createOneNodeGraph() {
+        Node startNode = new Node(1);
+
+        return startNode;
+    }
+
+    public static Node createNoConnectiveGraph() {
+        Node startNode = new Node(1);
+        Node node2 = new Node(2);
+        Node node3 = new Node(3);
+        startNode.addTarget(node2);
+
+        return startNode;
+    }
 }
