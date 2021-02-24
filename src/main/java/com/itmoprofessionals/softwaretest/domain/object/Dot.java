@@ -1,10 +1,13 @@
-package com.itmoprofessionals.softwaretest.domain;
+package com.itmoprofessionals.softwaretest.domain.object;
+
+import com.itmoprofessionals.softwaretest.domain.context.Event;
+import com.itmoprofessionals.softwaretest.domain.context.EventType;
 
 import java.util.Objects;
 
 public class Dot extends Spark {
     private final int dotId;
-    boolean isSpark = false;
+    private boolean isSpark = false;
 
     public Dot(int dotId, boolean isSpark) {
         this.dotId = dotId;
@@ -13,14 +16,22 @@ public class Dot extends Spark {
 
 
     @Override
-    public void spark() {
+    public Event spark() {
         isSpark = true;
-        System.out.println("Dot number " + this.dotId + " sparkled");
+        return Event.of("Dot number " + this.dotId + " sparkled", EventType.SPARK);
     }
 
     @Override
-    public void light() {
+    public Event light() {
+        return Event.of("Dot number " + dotId + " started lighting", EventType.LIGHT);
+    }
 
+    public int getDotId() {
+        return dotId;
+    }
+
+    public boolean isSpark() {
+        return isSpark;
     }
 
     @Override

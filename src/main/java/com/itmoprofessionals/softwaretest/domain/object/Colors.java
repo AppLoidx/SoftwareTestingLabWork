@@ -1,4 +1,4 @@
-package com.itmoprofessionals.softwaretest.domain;
+package com.itmoprofessionals.softwaretest.domain.object;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,8 +1,11 @@
-package com.itmoprofessionals.softwaretest.domain;
+package com.itmoprofessionals.softwaretest.domain.object;
+
+import com.itmoprofessionals.softwaretest.domain.context.Event;
+import com.itmoprofessionals.softwaretest.domain.context.EventType;
 
 import java.util.Objects;
 
-import static com.itmoprofessionals.softwaretest.domain.Colors.randomColor;
+import static com.itmoprofessionals.softwaretest.domain.object.Colors.randomColor;
 
 public class Flash extends Spark {
     private int flashId;
@@ -10,13 +13,15 @@ public class Flash extends Spark {
 
 
     @Override
-    public void spark() {
+    public Event spark() {
+        return Event.of("Flash number " + this.flashId + " sparkled", EventType.SPARK);
+
     }
 
     @Override
-    public void light() {
+    public Event light() {
         color = String.valueOf(randomColor());
-        System.out.println("Flash number " + flashId + " start shining in " + color + " color");
+        return Event.of("Flash number " + flashId + " start shining in " + color + " color", EventType.LIGHT);
     }
 
     public int getFlashId() {
