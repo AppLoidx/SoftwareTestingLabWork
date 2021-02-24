@@ -13,6 +13,10 @@ class SceneTest {
 
     @Test
     public void basicSceneTest() {
+
+        // TODO: rewrite this shit :)
+
+
         Scene scene = new Scene();
 
         // В полной темноте сверкнула ослепительно яркая точка света.
@@ -31,5 +35,35 @@ class SceneTest {
 
         LinkedList<Event> events = scene.getEvents();
         events.forEach(event -> System.out.println("[" + event.getEventType().toString() + "] " + event.getDescription()));
+
+        // TODO :
+        //  слишком топорный тест!
+        //  Хотелось бы минимум сравнений из description,
+        //  так как текст часто может меняться
+        // TODO :
+        //  Также немного смущают сообщения типа "Sun number 2 is appeared" в которых
+        //  number по сути является id PhysicalObject
+
+        assertEquals("Dot number 1 is appeared", events.get(0).getDescription());
+        assertEquals(EventType.APPEAR, events.get(0).getEventType());
+
+        assertEquals("Dot number 1 sparkled", events.get(1).getDescription());
+        assertEquals(EventType.SPARK, events.get(1).getEventType());
+
+        assertEquals("Sun number 2 is appeared", events.get(2).getDescription());
+        assertEquals(EventType.APPEAR, events.get(2).getEventType());
+
+        assertEquals("Sun number 3 is appeared", events.get(3).getDescription());
+        assertEquals(EventType.APPEAR, events.get(3).getEventType());
+
+        assertEquals("Sun number 2 start burning", events.get(4).getDescription());
+        assertEquals(EventType.BURN, events.get(4).getEventType());
+
+        assertEquals("Sun number 3 start burning", events.get(5).getDescription());
+        assertEquals(EventType.BURN, events.get(5).getEventType());
+
+        assertEquals(EventType.LIGHT, events.get(6).getEventType());
+
+
     }
 }
