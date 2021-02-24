@@ -1,8 +1,8 @@
-package com.itmoprofessionals.softwaretest.text;
+package com.itmoprofessionals.softwaretest.domain;
 
 import java.util.Objects;
 
-import static com.itmoprofessionals.softwaretest.text.Colors.randomColor;
+import static com.itmoprofessionals.softwaretest.domain.Colors.randomColor;
 
 public class Flash extends Spark {
     private int flashId;

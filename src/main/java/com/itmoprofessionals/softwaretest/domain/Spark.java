@@ -1,4 +1,4 @@
-package com.itmoprofessionals.softwaretest.text;
+package com.itmoprofessionals.softwaretest.domain;
 
 public abstract class Spark {
     public abstract void spark();
