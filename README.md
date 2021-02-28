@@ -1,7 +1,8 @@
 # Software Testing Labwork
 
-Current status : ![](https://github.com/AppLoidx/SoftwareTestingLabWork/actions/workflows/maven.yml/badge.svg)
-
+### Current status
+* GitHub actions: ![](https://github.com/AppLoidx/SoftwareTestingLabWork/actions/workflows/maven.yml/badge.svg)
+* Travis CI: ![](https://travis-ci.com/AppLoidx/SoftwareTestingLabWork.svg?branch=master&status=created)
 
 
 ## Test, build, run
