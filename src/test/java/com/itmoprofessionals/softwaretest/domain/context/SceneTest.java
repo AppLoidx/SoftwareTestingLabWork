@@ -14,10 +14,7 @@ class SceneTest {
     @Test
     public void basicSceneTest() {
 
-        // TODO: rewrite this shit :)
-
-
-        Scene scene = new Scene();
+        Scene scene = new Scene("Untitled");
 
         // В полной темноте сверкнула ослепительно яркая точка света.
         Dot dot = new Dot(1, false);
@@ -65,5 +62,30 @@ class SceneTest {
         assertEquals(EventType.LIGHT, events.get(6).getEventType());
 
 
+    }
+
+    @Test
+    public void sceneDescription() {
+        // TODO write test with Mockito:
+        //  1. Mock sceneDescription method
+        //  2. Assert that EventProcessor is called for each event correctly (in right order)
+
+        Scene scene = new Scene("Untitled");
+
+        // В полной темноте сверкнула ослепительно яркая точка света.
+        Dot dot = new Dot(1, false);
+        Sun sun1 = new Sun(2, true);
+        Sun sun2 = new Sun(3, true);
+        Flash flashFromSun = new Flash(4);
+
+        scene.applyAction(dot::appear);
+        scene.applyAction(dot::spark);
+        scene.applyAction(sun1::appear);
+        scene.applyAction(sun2::appear);
+        scene.applyAction(sun1::burn);
+        scene.applyAction(sun2::burn);
+        scene.applyAction(flashFromSun::light);
+
+        System.out.println(scene.sceneDescription());
     }
 }
