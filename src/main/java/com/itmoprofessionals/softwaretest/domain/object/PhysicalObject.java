@@ -17,7 +17,15 @@ public abstract class PhysicalObject {
     }
 
     public Event appear() {
-        return Event.of("Physical object appeared", EventType.APPEAR);
+        return Event.of("Physical object appeared", EventType.APPEAR, this);
+    }
+
+    /**
+     *
+     * @return object's type name. By default "Physical object"
+     */
+    public String getObjectTypeName() {
+        return "Physical object";
     }
 
     @Override

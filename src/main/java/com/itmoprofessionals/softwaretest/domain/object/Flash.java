@@ -12,17 +12,24 @@ public class Flash extends Spark {
         super(objectId);
     }
 
+    @Override
+    public String getObjectTypeName() {
+        return "Flash";
+    }
 
     @Override
     public Event spark() {
-        return Event.of("Flash number " + this.getId() + " sparkled", EventType.SPARK);
+        final String eventDescription = String.format("Flash number %d sparkled", this.getId());
 
+        return Event.of(eventDescription, EventType.SPARK, this);
     }
 
     @Override
     public Event light() {
         color = String.valueOf(randomColor());
-        return Event.of("Flash number " + this.getId() + " start shining in " + color + " color", EventType.LIGHT);
+        final String eventDescription = String.format("Flash number %d start shining in %s color", this.getId(), color);
+
+        return Event.of(eventDescription, EventType.LIGHT, this);
     }
 
     public String getColor() {

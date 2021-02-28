@@ -11,16 +11,20 @@ public class Dot extends Spark {
         this.isSpark = isSpark;
     }
 
+    @Override
+    public String getObjectTypeName() {
+        return "Dot";
+    }
 
     @Override
     public Event spark() {
         isSpark = true;
-        return Event.of("Dot number " + this.getId() + " sparkled", EventType.SPARK);
+        return Event.of("Dot number " + this.getId() + " sparkled", EventType.SPARK, this);
     }
 
     @Override
     public Event light() {
-        return Event.of("Dot number " + this.getId() + " started lighting", EventType.LIGHT);
+        return Event.of("Dot number " + this.getId() + " started lighting", EventType.LIGHT, this);
     }
 
     public boolean isSpark() {
@@ -29,6 +33,6 @@ public class Dot extends Spark {
 
     @Override
     public Event appear() {
-        return Event.of("Dot number " + this.getId() + " is appeared", EventType.APPEAR);
+        return Event.of("Dot number " + this.getId() + " is appeared", EventType.APPEAR, this);
     }
 }

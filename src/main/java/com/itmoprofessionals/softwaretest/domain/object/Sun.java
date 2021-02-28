@@ -17,14 +17,19 @@ public class Sun extends PhysicalObject implements Burnable {
     }
 
     @Override
+    public String getObjectTypeName() {
+        return "Sun";
+    }
+
+    @Override
     public Event burn() {
         isBurning = true;
-        return Event.of("Sun number " + this.getId() + " start burning", EventType.BURN);
+        return Event.of("Sun number " + this.getId() + " start burning", EventType.BURN, this);
     }
 
     @Override
     public Event appear() {
-        return Event.of("Sun number " + this.getId() + " is appeared", EventType.APPEAR);
+        return Event.of("Sun number " + this.getId() + " is appeared", EventType.APPEAR, this);
     }
 
 }

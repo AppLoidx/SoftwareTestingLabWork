@@ -7,6 +7,11 @@ public abstract class Spark extends PhysicalObject {
         super(id);
     }
 
+    @Override
+    public String getObjectTypeName() {
+        return "Spark";
+    }
+
     public abstract Event spark();
 
     public abstract Event light();
