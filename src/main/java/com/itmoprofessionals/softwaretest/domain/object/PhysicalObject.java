@@ -33,7 +33,7 @@ public abstract class PhysicalObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PhysicalObject that = (PhysicalObject) o;
-        return id == that.id;
+        return getId() == that.getId();
     }
 
     @Override

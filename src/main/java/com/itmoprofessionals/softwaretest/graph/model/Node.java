@@ -9,7 +9,7 @@ public class Node {
     private final HashSet<Node> targets = new HashSet<>();
     private final int id;
 
-    public Node(int id, ArrayList<Node> targets) {
+    public Node(int id, Collection<Node> targets) {
         this(id);
         this.targets.addAll(targets);
     }
