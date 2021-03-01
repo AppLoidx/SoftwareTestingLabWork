@@ -4,10 +4,15 @@ import com.itmoprofessionals.softwaretest.domain.object.Dot;
 import com.itmoprofessionals.softwaretest.domain.object.Flash;
 import com.itmoprofessionals.softwaretest.domain.object.Sun;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.LinkedList;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.*;
 
 class SceneTest {
 
@@ -32,14 +37,6 @@ class SceneTest {
 
         LinkedList<Event> events = scene.getEvents();
         events.forEach(event -> System.out.println("[" + event.getEventType().toString() + "] " + event.getDescription()));
-
-        // TODO :
-        //  слишком топорный тест!
-        //  Хотелось бы минимум сравнений из description,
-        //  так как текст часто может меняться
-        // TODO :
-        //  Также немного смущают сообщения типа "Sun number 2 is appeared" в которых
-        //  number по сути является id PhysicalObject
 
         assertEquals("Dot number 1 is appeared", events.get(0).getDescription());
         assertEquals(EventType.APPEAR, events.get(0).getEventType());
@@ -66,26 +63,39 @@ class SceneTest {
 
     @Test
     public void sceneDescription() {
-        // TODO write test with Mockito:
-        //  1. Mock sceneDescription method
-        //  2. Assert that EventProcessor is called for each event correctly (in right order)
 
         Scene scene = new Scene("Untitled");
 
+
         // В полной темноте сверкнула ослепительно яркая точка света.
+
         Dot dot = new Dot(1, false);
         Sun sun1 = new Sun(2, true);
         Sun sun2 = new Sun(3, true);
         Flash flashFromSun = new Flash(4);
 
-        scene.applyAction(dot::appear);
-        scene.applyAction(dot::spark);
-        scene.applyAction(sun1::appear);
-        scene.applyAction(sun2::appear);
-        scene.applyAction(sun1::burn);
-        scene.applyAction(sun2::burn);
-        scene.applyAction(flashFromSun::light);
+        EventProcessor eventProcessorMock = Mockito.mock(EventProcessor.class);
 
-        System.out.println(scene.sceneDescription());
+        scene.setEventProcessor(eventProcessorMock);
+        List<Action> actions = List.of(
+                dot::appear,
+                dot::spark,
+                sun1::appear,
+                sun2::appear,
+                sun1::burn,
+                sun2::burn,
+                flashFromSun::light
+        );
+
+        actions.forEach(scene::applyAction);
+
+        assertNotNull(scene.sceneDescription());
+
+        // TODO how to check order?
+        when(eventProcessorMock.processEvent(any(Event.class)))
+                .thenReturn("Processed event description mock");
+
+        verify(eventProcessorMock, times(actions.size())).processEvent(any(Event.class));
+
     }
 }
