@@ -34,6 +34,10 @@ public class Scene {
                 .orElse("No events"));
     }
 
+    public void setEventProcessor(@NotNull EventProcessor eventProcessor) {
+        this.eventProcessor = eventProcessor;
+    }
+
     public String getTitle() {
         return title;
     }
