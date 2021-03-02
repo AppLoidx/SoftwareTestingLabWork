@@ -17,7 +17,7 @@ columns=['x', 'y']
 
 data = []
 
-for x in frange(0, 2*math.pi, Fraction(1, 6)*math.pi):
+for x in frange(0, 2*math.pi - 2*Fraction(1, 6)*math.pi, Fraction(1, 6)*math.pi):
 	print(x, math.sin(x))
 	data.append([x,math.sin(x)])
 
