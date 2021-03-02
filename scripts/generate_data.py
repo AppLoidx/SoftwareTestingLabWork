@@ -5,6 +5,7 @@ __copyright__   = "Copyright 2021"
 
 import pandas as pd
 import math
+from fractions import Fraction
 
 def frange(start, stop, step):
 	    i = start
@@ -16,7 +17,7 @@ columns=['x', 'y']
 
 data = []
 
-for x in frange(0, 2*math.pi, 0.1):
+for x in frange(0, 2*math.pi, Fraction(1, 6)*math.pi):
 	print(x, math.sin(x))
 	data.append([x,math.sin(x)])
 
