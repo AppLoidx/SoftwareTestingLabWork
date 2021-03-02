@@ -1,5 +1,7 @@
 package com.itmoprofessionals.softwaretest.domain.context;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface EventProcessor {
-    String processEvent(Event event);
+    String processEvent(@NotNull Event event);
 }

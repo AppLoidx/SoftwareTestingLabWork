@@ -24,6 +24,12 @@ class PhysicalObjectTest {
         assertEquals("Physical object", physicalObject.getObjectTypeName());
     }
 
+    @Test
+    void defaultAppearEvent() {
+        PhysicalObject physicalObject = createPhysicalObjectWithMockito();
+        assertNotNull(physicalObject.appear());
+    }
+
     PhysicalObject createPhysicalObjectWithMockito() {
         return Mockito.mock(PhysicalObject.class, Mockito.CALLS_REAL_METHODS);
     }
