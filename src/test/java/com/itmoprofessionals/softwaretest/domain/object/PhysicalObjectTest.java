@@ -30,6 +30,17 @@ class PhysicalObjectTest {
         assertNotNull(physicalObject.appear());
     }
 
+    @Test
+    void equalsHashcodeContract() {
+        PhysicalObject p1 = createPhysicalObject(1);
+        PhysicalObject p1Same = createPhysicalObject(1);
+        PhysicalObject p2 = createPhysicalObject(2);
+
+        assertEquals(p1, p1Same);
+        assertEquals(p1.hashCode(), p1Same.hashCode());
+        assertNotEquals(p1, p2);
+    }
+
     PhysicalObject createPhysicalObjectWithMockito() {
         return Mockito.mock(PhysicalObject.class, Mockito.CALLS_REAL_METHODS);
     }
