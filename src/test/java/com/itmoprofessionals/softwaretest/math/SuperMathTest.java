@@ -54,6 +54,18 @@ class SuperMathTest {
     }
 
     @Test
+    void sin_sampleTest_nearHalfPI_plusDelta() {
+        assertNotEquals(1, SuperMath.sin(Math.PI / 2 + SIN_DELTA));
+        assertEquals(0.9999995000000417, SuperMath.sin(Math.PI / 2 + SIN_DELTA), SIN_DELTA);
+    }
+
+    @Test
+    void sin_sampleTest_nearHalfPI_minusDelta() {
+        assertNotEquals(1, SuperMath.sin(Math.PI / 2 - SIN_DELTA));
+        assertEquals(0.9999995000000417, SuperMath.sin(Math.PI / 2 - SIN_DELTA), SIN_DELTA);
+    }
+
+    @Test
     void sin_taylorSpecialCase_ArgValueNear2PI() {
         assertFalse(Math.abs(0.09983341664682804 - SuperMath.sin(-6.183185307179587)) < SIN_DELTA);
     }
@@ -63,7 +75,18 @@ class SuperMathTest {
         assertEquals(0, SuperMath.sin(Math.PI), SIN_DELTA);
     }
 
-    // TODO: write more sin test
+    @Test
+    void sin_sampleTest_nearPI_minusDelta() {
+        assertNotEquals(0, SuperMath.sin(Math.PI - SIN_DELTA));
+        assertEquals(0.000999999833333354, SuperMath.sin(Math.PI - SIN_DELTA), SIN_DELTA);
+    }
+
+    @Test
+    void sin_sampleTest_nearPI_plusDelta() {
+        assertNotEquals(0, SuperMath.sin(Math.PI + SIN_DELTA));
+        assertEquals(-0.000999999833333109, SuperMath.sin(Math.PI + SIN_DELTA), SIN_DELTA);
+    }
+
 
     @Test
     void sin_datasetTest() throws IOException {
