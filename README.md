@@ -1,12 +1,16 @@
 # Software Testing Labwork
 
 ### Current status
-* GitHub actions: ![](https://github.com/AppLoidx/SoftwareTestingLabWork/actions/workflows/maven.yml/badge.svg)
-* Travis CI: [![Build Status](https://travis-ci.com/AppLoidx/SoftwareTestingLabWork.svg?branch=master)](https://travis-ci.com/AppLoidx/SoftwareTestingLabWork)
-* Code coverage: [![codecov](https://codecov.io/gh/AppLoidx/SoftwareTestingLabWork/branch/master/graph/badge.svg?token=O9KRQ9AB32)](https://codecov.io/gh/AppLoidx/SoftwareTestingLabWork)
+![GH Actions](https://img.shields.io/github/workflow/status/AppLoidx/SoftwareTestingLabWork/Java%20CI%20with%20Maven?style=for-the-badge&label=GITHUB%20ACTIONS)
+[![Build Status](https://img.shields.io/travis/com/AppLoidx/SoftwareTestingLabWork?style=for-the-badge&label=TRAVIS%20CI)](https://travis-ci.com/AppLoidx/SoftwareTestingLabWork)
+[![codecov](https://img.shields.io/codecov/c/github/AppLoidx/SoftwareTestingLabWork?style=for-the-badge&label=CODE%20COVERAGE)](https://codecov.io/gh/AppLoidx/SoftwareTestingLabWork)
+![Java version](https://img.shields.io/badge/JAVA-11-blue?style=for-the-badge)
+![LGTM Grade](https://img.shields.io/lgtm/grade/java/github/AppLoidx/SoftwareTestingLabWork?style=for-the-badge)
+![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/AppLoidx/SoftwareTestingLabWork?style=for-the-badge)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/AppLoidx/SoftwareTestingLabWork/master?style=for-the-badge)
 
-### Code coverage
 ![](https://codecov.io/gh/AppLoidx/SoftwareTestingLabWork/branch/master/graphs/sunburst.svg)
+
 
 ## Maven JUnit test
 
