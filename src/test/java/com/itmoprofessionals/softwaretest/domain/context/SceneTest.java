@@ -88,12 +88,10 @@ class SceneTest {
         );
 
         actions.forEach(scene::applyAction);
-
-        assertNotNull(scene.sceneDescription());
-
-        // TODO how to check order?
         when(eventProcessorMock.processEvent(any(Event.class)))
                 .thenReturn("Processed event description mock");
+        assertNotNull(scene.sceneDescription());
+
 
         verify(eventProcessorMock, times(actions.size())).processEvent(any(Event.class));
 
