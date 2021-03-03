@@ -2,7 +2,18 @@ package com.itmoprofessionals.softwaretest.domain.context;
 
 import com.itmoprofessionals.softwaretest.domain.object.PhysicalObject;
 
-public class EventProcessorDefault implements EventProcessor{
+/**
+ * Default event processor for {@link Scene#sceneDescription()}
+ *
+ * @see Scene
+ */
+public class EventProcessorDefault implements EventProcessor {
+    /**
+     *
+     * @param event not null event object
+     * @return string interpretation of event
+     * @throws IllegalArgumentException when passed null as {@link Event}
+     */
     @Override
     public String processEvent(Event event) {
         if (event == null) throw new IllegalArgumentException("Argument should not be null");

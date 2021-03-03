@@ -11,11 +11,22 @@ public class Event {
     @Nullable
     private PhysicalObject subject;
 
+    /**
+     *
+     * @param description event description
+     * @param eventType type of event
+     */
     public Event(String description, EventType eventType) {
         this.description = description;
         this.eventType = eventType;
     }
 
+    /**
+     *
+     * @param description event description
+     * @param eventType type of event
+     * @param subject physical object that performed event (or target of event)
+     */
     public Event(String description, EventType eventType, @Nullable PhysicalObject subject) {
         this(description, eventType);
         this.subject = subject;
@@ -33,12 +44,25 @@ public class Event {
         return Optional.ofNullable(subject);
     }
 
+    /**
+     * Constructs event
+     * @param description event description
+     * @param eventType type of event
+     * @return event instance
+     */
     public static Event of(String description, EventType eventType) {
         return new Event(description, eventType);
     }
 
-    public static Event of(String description, EventType eventType, PhysicalObject object) {
-        return new Event(description, eventType, object);
+    /**
+     * Constructs event
+     * @param description event description
+     * @param eventType type of event
+     * @param subject physical object that performed event (or target of event)
+     * @return event instance
+     */
+    public static Event of(String description, EventType eventType, PhysicalObject subject) {
+        return new Event(description, eventType, subject);
     }
 
 }
