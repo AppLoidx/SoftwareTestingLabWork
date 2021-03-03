@@ -132,6 +132,16 @@ public void sceneDescription() {
 }
 ```
 
+```java
+class SparkTest {
+    @Test
+    void defaultObjectTypeForSparks() {
+        Spark spark = Mockito.mock(Spark.class, Mockito.CALLS_REAL_METHODS);
+        assertEquals("Spark", spark.getObjectTypeName());
+    }
+}
+```
+
 ### Continuous integration
 
 ![](docs/test-flow.png)
