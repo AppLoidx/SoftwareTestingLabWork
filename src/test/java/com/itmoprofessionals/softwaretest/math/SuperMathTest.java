@@ -24,6 +24,18 @@ class SuperMathTest {
         assertEquals(-0, SuperMath.sin(-0));    // should have the same sign
     }
 
+    @Test
+    void sin_nearZero_PlusDelta() {
+        assertNotEquals(0, SuperMath.sin(SIN_DELTA));
+        assertEquals(0.0009999998333333417, SuperMath.sin(SIN_DELTA), SIN_DELTA);
+    }
+
+    @Test
+    void sin_nearZero_MinusDelta() {
+        assertNotEquals(0, SuperMath.sin(-SIN_DELTA));
+        assertEquals(-0.0009999998333333417, SuperMath.sin(-SIN_DELTA), SIN_DELTA);
+    }
+
 
     @Test
     void sin_NaNTest() {
