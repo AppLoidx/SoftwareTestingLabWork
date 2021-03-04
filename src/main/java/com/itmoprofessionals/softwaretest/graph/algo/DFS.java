@@ -20,6 +20,7 @@ public final class DFS {
      * @param nodeObserver observer that will be applied to all visited nodes
      */
     public static void applyTo(final Node startNode, final NodeObserver nodeObserver) {
+        if (startNode == null) return;
         log.debug("Start DFS algorithm");
 
         final Set<Node> visited = new HashSet<>();

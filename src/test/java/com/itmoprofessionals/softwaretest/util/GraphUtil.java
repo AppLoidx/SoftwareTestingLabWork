@@ -33,6 +33,10 @@ public final class GraphUtil {
         return startNode;
     }
 
+    public static Node emptyGraph() {
+        return null;
+    }
+
     public static Node createOneNodeGraph() {
         Node startNode = new Node(1);
 

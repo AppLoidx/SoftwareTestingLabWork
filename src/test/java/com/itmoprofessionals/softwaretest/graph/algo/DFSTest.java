@@ -42,7 +42,7 @@ class DFSTest {
         LinkedList<Node> path = new LinkedList<>();
         DFS.applyTo(sampleNode, path::add);
 
-        assertEquals(15,path.stream().mapToInt(n->n.getId()).sum());
+        assertEquals(15,path.stream().mapToInt(Node::getId).sum());
     }
 
     @Test
@@ -53,6 +53,14 @@ class DFSTest {
 
         assertEquals(1, path.size());
         assertEquals(path.get(0).getId(), 1);
+    }
+
+    @Test
+    void dfsNullTest() {
+        Node node = GraphUtil.emptyGraph();
+        LinkedList<Node> path = new LinkedList<>();
+        DFS.applyTo(node, path::add);
+        assertTrue(path.isEmpty());
     }
 
     @Test
