@@ -42,7 +42,7 @@ class DFSTest {
         LinkedList<Node> path = new LinkedList<>();
         DFS.applyTo(sampleNode, path::add);
 
-        assertEquals(15,path.stream().mapToInt(n->n.getId()).sum());
+        assertEquals(15,path.stream().mapToInt(Node::getId).sum());
     }
 
     @Test
