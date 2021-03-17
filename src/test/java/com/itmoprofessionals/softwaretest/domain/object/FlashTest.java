@@ -18,8 +18,9 @@ class FlashTest {
     void sparkEvent() {
         Flash flash = new Flash(1);
         Event spark = flash.spark();
-        assertNotNull(spark);
-        AssertUtil.assertEventTypeTo(flash, spark);
+        assertAll(
+                () -> assertNotNull(spark),
+                () -> AssertUtil.assertEventTypeTo(flash, spark));
     }
 
 }

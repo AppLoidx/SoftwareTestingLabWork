@@ -36,13 +36,14 @@ class DFSTest {
         Node node5 = path.get(4);
         assertTrue(node5.getId() == 4 || node5.getId() == 3);
     }
+
     @Test
-    void specialBlackTest(){
+    void specialBlackTest() {
         Node sampleNode = GraphUtil.createSampleGraph();
         LinkedList<Node> path = new LinkedList<>();
         DFS.applyTo(sampleNode, path::add);
 
-        assertEquals(15,path.stream().mapToInt(Node::getId).sum());
+        assertEquals(15, path.stream().mapToInt(Node::getId).sum());
     }
 
     @Test
@@ -50,9 +51,9 @@ class DFSTest {
         Node sampleNode = GraphUtil.createOneNodeGraph();
         LinkedList<Node> path = new LinkedList<>();
         DFS.applyTo(sampleNode, path::add);
-
-        assertEquals(1, path.size());
-        assertEquals(path.get(0).getId(), 1);
+        assertAll(
+                () -> assertEquals(1, path.size()),
+                () -> assertEquals(path.get(0).getId(), 1));
     }
 
     @Test
@@ -69,8 +70,9 @@ class DFSTest {
         LinkedList<Node> path = new LinkedList<>();
         DFS.applyTo(sampleNode, path::add);
 
-        assertEquals(2, path.size());
-        assertNotEquals(path.get(0).getId(), 3);
+        assertAll(
+                () -> assertEquals(2, path.size()),
+                () -> assertNotEquals(path.get(0).getId(), 3));
     }
 
     @Test
@@ -79,8 +81,9 @@ class DFSTest {
         LinkedList<Node> path = new LinkedList<>();
         DFS.applyTo(sampleNode, path::add);
 
-        assertEquals(path.get(0).getId(), 1);
-        assertNotEquals(path.get(4).getId(), 1);
+        assertAll(
+                () -> assertEquals(path.get(0).getId(), 1),
+                () -> assertNotEquals(path.get(4).getId(), 1));
     }
 
 }

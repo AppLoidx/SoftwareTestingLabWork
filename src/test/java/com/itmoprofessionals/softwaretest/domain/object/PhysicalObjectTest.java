@@ -34,9 +34,6 @@ class PhysicalObjectTest {
         PhysicalObject p1Same = createPhysicalObject(1);
         PhysicalObject p2 = createPhysicalObject(2);
 
-        assertEquals(p1, p1Same);
-        assertEquals(p1.hashCode(), p1Same.hashCode());
-        assertNotEquals(p1, p2);
         assertAll(() -> assertEquals(p1, p1Same),
                 () -> assertEquals(p1.hashCode(), p1Same.hashCode()),
                 () -> assertNotEquals(p1, p2));
