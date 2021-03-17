@@ -36,6 +36,14 @@ class DFSTest {
         Node node5 = path.get(4);
         assertTrue(node5.getId() == 4 || node5.getId() == 3);
     }
+    @Test
+    void specialBlackTest(){
+        Node sampleNode = GraphUtil.createSampleGraph();
+        LinkedList<Node> path = new LinkedList<>();
+        DFS.applyTo(sampleNode, path::add);
+
+        assertEquals(15,path.stream().mapToInt(Node::getId).sum());
+    }
 
     @Test
     void dfsOneNodeTest() {
@@ -45,6 +53,14 @@ class DFSTest {
 
         assertEquals(1, path.size());
         assertEquals(path.get(0).getId(), 1);
+    }
+
+    @Test
+    void dfsNullTest() {
+        Node node = GraphUtil.emptyGraph();
+        LinkedList<Node> path = new LinkedList<>();
+        DFS.applyTo(node, path::add);
+        assertTrue(path.isEmpty());
     }
 
     @Test
