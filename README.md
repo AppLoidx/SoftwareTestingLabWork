@@ -47,8 +47,12 @@ void sin_NaNTest() {
 }
 
 @Test
-void sin_InfTest() {
+void sin_InfTestNegative() {
         assertEquals(Double.NaN, SuperMath.sin(Double.NEGATIVE_INFINITY));
+}
+
+@Test
+void sin_InfTestPositive() {
         assertEquals(Double.NaN, SuperMath.sin(Double.POSITIVE_INFINITY));
 }
 ```

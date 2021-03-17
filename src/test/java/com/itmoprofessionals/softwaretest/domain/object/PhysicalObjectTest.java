@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.when;
 
 class PhysicalObjectTest {
     @Test
@@ -39,6 +37,9 @@ class PhysicalObjectTest {
         assertEquals(p1, p1Same);
         assertEquals(p1.hashCode(), p1Same.hashCode());
         assertNotEquals(p1, p2);
+        assertAll(() -> assertEquals(p1, p1Same),
+                () -> assertEquals(p1.hashCode(), p1Same.hashCode()),
+                () -> assertNotEquals(p1, p2));
     }
 
     PhysicalObject createPhysicalObjectWithMockito() {
@@ -46,7 +47,8 @@ class PhysicalObjectTest {
     }
 
     PhysicalObject createPhysicalObject(int id) {
-        return new PhysicalObject(id) {};
+        return new PhysicalObject(id) {
+        };
     }
 
 }
