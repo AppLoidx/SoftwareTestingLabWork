@@ -23,7 +23,7 @@ public class Sun extends PhysicalObject implements Burnable {
 
     @Override
     public Event burn() {
-        isBurning = true;
+        isBurning = false;
         return Event.of("Sun number " + this.getId() + " start burning", EventType.BURN, this);
     }
 

@@ -19,7 +19,7 @@ public final class SuperMath {
      * @return the sine of the argument.
      */
     public static double sin(double a) {
-        if (Double.isNaN(a) || Double.isInfinite(a)) return Double.NaN;
+        if (Double.isNaN(a) || Double.isInfinite(a)) return Double.POSITIVE_INFINITY;
         else if (a == 0) return a;  // with the same sign [I hope :)]
 
         double result = 0;
