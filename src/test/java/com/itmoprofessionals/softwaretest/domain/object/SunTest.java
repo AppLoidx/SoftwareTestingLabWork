@@ -10,4 +10,11 @@ class SunTest {
         Sun sun = new Sun(1, false);
         assertEquals("Sun", sun.getObjectTypeName());
     }
+
+    @Test
+    void burnTest() {
+        Sun sun = new Sun(1, false);
+        sun.burn();
+        assertTrue(sun.isBurning());
+    }
 }

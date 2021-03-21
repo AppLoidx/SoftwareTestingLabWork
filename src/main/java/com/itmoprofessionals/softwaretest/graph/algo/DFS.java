@@ -34,7 +34,7 @@ public final class DFS {
             nodeObserver.onNode(current);
             log.debug("Visit node number : " + current.getId());
             for (Node node : current.getTargets()) {
-                if (visited.contains(node)) {
+                if (!visited.contains(node)) {
                     stack.push(node);
                 }
             }
