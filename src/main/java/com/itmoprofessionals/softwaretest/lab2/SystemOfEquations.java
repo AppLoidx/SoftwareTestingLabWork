@@ -4,7 +4,7 @@ import static java.lang.Math.*;
 
 public class SystemOfEquations {
 
-    static final double PRECISION = 1E-8;
+    static final double PRECISION = 0.001;
 
 /*  x <= 0 : (((((tan(x) + csc(x)) * cos(x)) ^ 3) ^ 3) / (((cot(x) / sec(x)) + sin(x)) * cos(x)))
     x > 0 : (((((ln(x) * ln(x)) + log_10(x)) / ln(x)) * (log_2(x) - (log_10(x) + ln(x)))) ^ 2)*/
@@ -51,6 +51,8 @@ public class SystemOfEquations {
     }
 
     public static double ln(double x) {
+        if (x <= 0)
+            return Double.NaN;
         double x1 = (x - 1) / (x + 1);
         double current = x1;
         double result = 0.0;
@@ -71,18 +73,18 @@ public class SystemOfEquations {
         return ln(x) / ln(10.0);
     }
 
-    public double y1(double x) {
+    public static double y1(double x) {
         return ((pow((pow(((tan(x) + csc(x)) * cos(x)), 3)), 3)) / (((cot(x) / sec(x)) + sin(x)) * cos(x)));
     }
 
-    public double y2(double x) {
+    public static double y2(double x) {
         return (pow(((((ln(x) * ln(x)) + log_10(x)) / ln(x)) * (log_2(x) - (log_10(x) + ln(x)))), 2));
     }
 
-    public double system(double x) {
+    public static double system(double x) {
         double equation;
-        if (x >= 0) equation = y1(x);
-        else equation = y2(x);
+        if (x > 0) equation = y2(x);
+        else equation = y1(x);
 
         return equation;
     }
