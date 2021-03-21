@@ -73,15 +73,15 @@ public class SystemOfEquations {
         return ln(x) / ln(10.0);
     }
 
-    public static double y1(double x) {
+    public double y1(double x) {
         return ((pow((pow(((tan(x) + csc(x)) * cos(x)), 3)), 3)) / (((cot(x) / sec(x)) + sin(x)) * cos(x)));
     }
 
-    public static double y2(double x) {
+    public double y2(double x) {
         return (pow(((((ln(x) * ln(x)) + log_10(x)) / ln(x)) * (log_2(x) - (log_10(x) + ln(x)))), 2));
     }
 
-    public static double system(double x) {
+    public double system(double x) {
         double equation;
         if (x > 0) equation = y2(x);
         else equation = y1(x);
