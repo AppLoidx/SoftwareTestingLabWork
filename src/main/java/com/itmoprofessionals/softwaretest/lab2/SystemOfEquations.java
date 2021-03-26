@@ -1,6 +1,11 @@
 package com.itmoprofessionals.softwaretest.lab2;
 
-import static java.lang.Math.*;
+import java.io.*;
+
+import static java.lang.Math.abs;
+import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
+import static java.lang.Math.PI;
 
 public class SystemOfEquations {
 
@@ -80,4 +85,25 @@ public class SystemOfEquations {
 
         return equation;
     }
-}
+
+    void createSCV(double from, double to, double step) {
+
+        try (PrintWriter writer = new PrintWriter(new File("test.csv"))) {
+            StringBuilder sb = new StringBuilder();
+        double cur;
+            cur = from;
+            sb.append("X, Y, sin(X), cos(X), tan(X), cot(X), sec(X), csc(X) \n");
+        while (cur < to) {
+            sb.append(cur).append(", ").append(system(cur)).append(", ").append(sin(cur)).append(", ").append(cos(cur))
+                    .append(", ").append(tan(cur)).append(", ").append(cot(cur)).append(", ").append(sec(cur)).append(", ")
+                    .append(csc(cur)).append("\n");
+            cur += step;
+        }
+        writer.write(sb.toString());
+        writer.flush();
+    } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
