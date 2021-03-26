@@ -16,91 +16,136 @@ public class FirstLayerTest {
     @BeforeAll
     static void createMock(){
         systemMock = Mockito.mock(SystemOfEquations.class, Mockito.CALLS_REAL_METHODS);
+
+        /*
+          Негативная часть функции имеет вид периодической функции, которая
+          состоит из 4-ех частей.
+          В каждой части есть граничные точки, экстремумы или точки перегиба
+
+          Граничные точки представляют собой точки разрыва второго рода. В таких
+          точках невозможно посчитать значение функции и предел функции, в
+          окрестностях этих точек стремиться к +- бесконечности
+
+          Для тестирования были исследованы все точки разрыва первого и второго рода,
+          была проконтролирована соблюдение периодичности, и выбраны и протестированы
+          точки в каждом классе эквивалентности.
+         */
+
         when(systemMock.system(0)).thenReturn(Double.NaN);
         when(systemMock.system(0 - EPSILON)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(0 + EPSILON - PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
+        when(systemMock.system(0 + EPSILON - 100 * PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(0 - EPSILON - PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
+        when(systemMock.system(0 - EPSILON - 100 * PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
 
         when(systemMock.system(-1.288)).thenReturn(25.8);
         when(systemMock.system(-1.288 - PERIOD)).thenReturn(25.8);
+        when(systemMock.system(-1.288 - 100 * PERIOD)).thenReturn(25.8);
 
         when(systemMock.system(-1.425)).thenReturn(21.496);
         when(systemMock.system(-1.425 - PERIOD)).thenReturn(21.496);
+        when(systemMock.system(-1.425 - 100 * PERIOD)).thenReturn(21.496);
 
         when(systemMock.system(-1.5)).thenReturn(25.58);
         when(systemMock.system(-1.5 - PERIOD)).thenReturn(25.58);
+        when(systemMock.system(-1.5 - 100 * PERIOD)).thenReturn(25.58);
 
         when(systemMock.system(-Math.PI/2 + EPSILON)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(-Math.PI/2 + EPSILON - PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
+        when(systemMock.system(-Math.PI/2 + EPSILON - 100 * PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(-Math.PI/2)).thenReturn(Double.NaN);
         when(systemMock.system(-Math.PI/2 - PERIOD)).thenReturn(Double.NaN);
+        when(systemMock.system(-Math.PI/2 - 100 * PERIOD)).thenReturn(Double.NaN);
 
         when(systemMock.system(-Math.PI/2 - EPSILON)).thenReturn(Double.NEGATIVE_INFINITY);
         when(systemMock.system(-Math.PI/2 - EPSILON - PERIOD)).thenReturn(Double.NEGATIVE_INFINITY);
+        when(systemMock.system(-Math.PI/2 - EPSILON - 100 * PERIOD)).thenReturn(Double.NEGATIVE_INFINITY);
 
         when(systemMock.system(-1.67)).thenReturn(-3.723);
         when(systemMock.system(-1.67 - PERIOD)).thenReturn(-3.723);
+        when(systemMock.system(-1.67 - 100 * PERIOD)).thenReturn(-3.723);
 
         when(systemMock.system(-1.9)).thenReturn(-0.0316);
         when(systemMock.system(-1.9 - PERIOD)).thenReturn(-0.0316);
+        when(systemMock.system(-1.9 - 100 * PERIOD)).thenReturn(-0.0316);
 
         when(systemMock.system(-2)).thenReturn(-0.0017);
         when(systemMock.system(-2 - PERIOD)).thenReturn(-0.0017);
+        when(systemMock.system(-2 - 100 * PERIOD)).thenReturn(-0.0017);
 
         when(systemMock.system(-2.237)).thenReturn(0.0);
         when(systemMock.system(-2.237 - PERIOD)).thenReturn(0.0);
+        when(systemMock.system(-2.237 - 100 * PERIOD)).thenReturn(0.0);
 
         when(systemMock.system(-2.428)).thenReturn(0.0017);
         when(systemMock.system(-2.428 - PERIOD)).thenReturn(0.0017);
+        when(systemMock.system(-2.428 - 100 * PERIOD)).thenReturn(0.0017);
 
         when(systemMock.system(-2.4893)).thenReturn(0.0317);
         when(systemMock.system(-2.4893 - PERIOD)).thenReturn(0.0317);
+        when(systemMock.system(-2.4893 - 100 * PERIOD)).thenReturn(0.0317);
 
         when(systemMock.system(-2.6175)).thenReturn(3.715);
         when(systemMock.system(-2.6175 - PERIOD)).thenReturn(3.715);
+        when(systemMock.system(-2.6175 - 100 * PERIOD)).thenReturn(3.715);
 
         when(systemMock.system(-2.6175)).thenReturn(3.715);
         when(systemMock.system(-2.6175 - PERIOD)).thenReturn(3.715);
+        when(systemMock.system(-2.6175 - 100 * PERIOD)).thenReturn(3.715);
 
         when(systemMock.system(-Math.PI)).thenReturn(Double.NaN);
         when(systemMock.system(-Math.PI + EPSILON)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(-Math.PI - PERIOD)).thenReturn(Double.NaN);
+        when(systemMock.system(-Math.PI - 100 * PERIOD)).thenReturn(Double.NaN);
         when(systemMock.system(-Math.PI - EPSILON - PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
+        when(systemMock.system(-Math.PI - EPSILON - 100 *PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
 
         when(systemMock.system(-3.665)).thenReturn(3.801);
         when(systemMock.system(-3.665 - PERIOD)).thenReturn(3.801);
+        when(systemMock.system(-3.665 - 100 * PERIOD)).thenReturn(3.801);
 
         when(systemMock.system(-3.8)).thenReturn(0.0243);
         when(systemMock.system(-3.8 - PERIOD)).thenReturn(0.0243);
+        when(systemMock.system(-3.8 - 100 * PERIOD)).thenReturn(0.0243);
 
         when(systemMock.system(-4.046)).thenReturn(0.0);
         when(systemMock.system(-4.046 - PERIOD)).thenReturn(0.0);
+        when(systemMock.system(-4.046 - 100 * PERIOD)).thenReturn(0.0);
 
         when(systemMock.system(-4.4)).thenReturn(-0.0475);
         when(systemMock.system(-4.4 - PERIOD)).thenReturn(-0.0475);
+        when(systemMock.system(-4.4 - 100 * PERIOD)).thenReturn(-0.0475);
 
         when(systemMock.system(-4.615)).thenReturn(-3.87);
         when(systemMock.system(-4.615 - PERIOD)).thenReturn(-3.87);
+        when(systemMock.system(-4.615 - 100 * PERIOD)).thenReturn(-3.87);
 
         when(systemMock.system(-1.5 * Math.PI/2 + EPSILON)).thenReturn(Double.NEGATIVE_INFINITY);
         when(systemMock.system(-1.5 * Math.PI/2 + EPSILON - PERIOD)).thenReturn(Double.NEGATIVE_INFINITY);
+        when(systemMock.system(-1.5 * Math.PI/2 + EPSILON - 100 * PERIOD)).thenReturn(Double.NEGATIVE_INFINITY);
         when(systemMock.system(-1.5 * Math.PI/2)).thenReturn(Double.NaN);
         when(systemMock.system(-1.5 * Math.PI/2 - PERIOD)).thenReturn(Double.NaN);
+        when(systemMock.system(-1.5 * Math.PI/2 - 100 * PERIOD)).thenReturn(Double.NaN);
 
         when(systemMock.system(-1.5 * Math.PI/2 - EPSILON)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(-1.5 * Math.PI/2 - EPSILON - PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
+        when(systemMock.system(-1.5 * Math.PI/2 - EPSILON - 100 * PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
 
         when(systemMock.system(-4.783)).thenReturn(25.61);
         when(systemMock.system(-4.783 - PERIOD)).thenReturn(25.61);
+        when(systemMock.system(-4.783 - 100 * PERIOD)).thenReturn(25.61);
 
         when(systemMock.system(-4.859)).thenReturn(21.496);
         when(systemMock.system(-4.859 - PERIOD)).thenReturn(21.496);
+        when(systemMock.system(-4.859 - 100 * PERIOD)).thenReturn(21.496);
 
         when(systemMock.system(-4.991)).thenReturn(25.579);
         when(systemMock.system(-4.991 - PERIOD)).thenReturn(25.579);
+        when(systemMock.system(-4.991 - 100 * PERIOD)).thenReturn(25.579);
 
         when(systemMock.system(-2*Math.PI + EPSILON)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(-2*Math.PI + EPSILON - PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
+        when(systemMock.system(-2*Math.PI + EPSILON - 100 * PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
 
         /////////////////////////////// todo xpath locator
 
@@ -132,12 +177,30 @@ public class FirstLayerTest {
         );
     }
     @Test
+    void testRightEndpointF1With100Period(){
+        assertEquals(
+                Double.POSITIVE_INFINITY,
+                systemMock.system(0.0 - EPSILON - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = (0-) - 100 * PERIOD)"
+        );
+    }
+    @Test
     void testRightEndpointF1WithEpsAndPeriod(){
         assertEquals(
                 Double.POSITIVE_INFINITY,
                 systemMock.system(0.0 + EPSILON - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = (0-) + EPSILON - PERIOD)"
+        );
+    }
+ @Test
+    void testRightEndpointF1WithEpsAnd100Period(){
+        assertEquals(
+                Double.POSITIVE_INFINITY,
+                systemMock.system(0.0 + EPSILON - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = (0-) + EPSILON - 100 * PERIOD)"
         );
     }
 
@@ -159,6 +222,15 @@ public class FirstLayerTest {
                 "Layer 1: [F1] (х = -1.288 - PERIOD)"
         );
     }
+    @Test
+    void test1F1100Period(){
+        assertEquals(
+                25.8,
+                systemMock.system(-1.288 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -1.288 - 100 * PERIOD)"
+        );
+    }
 
     @Test
     void test2F1(){
@@ -176,6 +248,15 @@ public class FirstLayerTest {
                 systemMock.system(-1.425 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -1.425 - PERIOD)"
+        );
+    }
+    @Test
+    void test2F1100Period(){
+        assertEquals(
+                21.496,
+                systemMock.system(-1.425 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -1.425 - 100 * PERIOD)"
         );
     }
 
@@ -198,6 +279,15 @@ public class FirstLayerTest {
                 "Layer 1: [F1] (х = -1.5 - PERIOD)"
         );
     }
+    @Test
+    void test3F1100Period(){
+        assertEquals(
+                25.58,
+                systemMock.system(-1.5 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -1.5 - 100 * PERIOD)"
+        );
+    }
 
     @Test
     void testPlusHalfPiEpsilonF1(){
@@ -218,6 +308,15 @@ public class FirstLayerTest {
                 "Layer 1: [F1] (х = -Math.PI/2 + EPSILON - PERIOD)"
         );
     }
+    @Test
+    void testPlusHalfPiEpsilonF1100Period(){
+        assertEquals(
+                Double.POSITIVE_INFINITY,
+                systemMock.system(-Math.PI/2 + EPSILON - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -Math.PI/2 + EPSILON - 100 * PERIOD)"
+        );
+    }
 
     @Test
     void testMinusHalfPiF1(){
@@ -236,6 +335,15 @@ public class FirstLayerTest {
                 systemMock.system(-Math.PI/2 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -Math.PI/2 - PERIOD)"
+        );
+    }
+    @Test
+    void testMinusHalfPiF1100Period(){
+        assertEquals(
+                Double.NaN,
+                systemMock.system(-Math.PI/2 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -Math.PI/2 - 100 * PERIOD)"
         );
     }
 
@@ -260,6 +368,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void testMinusHalfPiEpsilonF1100Period(){
+        assertEquals(
+                Double.NEGATIVE_INFINITY,
+                systemMock.system(-Math.PI/2 - EPSILON - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -Math.PI/2 - EPSILON - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test4F1(){
         assertEquals(
                 -3.723,
@@ -276,6 +394,15 @@ public class FirstLayerTest {
                 systemMock.system(-1.67 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -1.67 - PERIOD)"
+        );
+    }
+    @Test
+    void test4F1100Period(){
+        assertEquals(
+                -3.723,
+                systemMock.system(-1.67 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -1.67 - 100 * PERIOD)"
         );
     }
 
@@ -300,6 +427,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void test5F1100Period(){
+        assertEquals(
+                -0.0316,
+                systemMock.system(-1.9 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -1.9 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test6F1(){
         assertEquals(
                 -0.0017,
@@ -316,6 +453,16 @@ public class FirstLayerTest {
                 systemMock.system(-2 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -2 - PERIOD)"
+        );
+    }
+
+    @Test
+    void test6F1100Period(){
+        assertEquals(
+                -0.0017,
+                systemMock.system(-2 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -2 - 100 * PERIOD)"
         );
     }
 
@@ -340,6 +487,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void test7F1100Period(){
+        assertEquals(
+                0.0,
+                systemMock.system(-2.237 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -2.237 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test8F1(){
         assertEquals(
                 0.0017,
@@ -356,6 +513,16 @@ public class FirstLayerTest {
                 systemMock.system(-2.428 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -2.428 - PERIOD)"
+        );
+    }
+
+    @Test
+    void test8F1100Period(){
+        assertEquals(
+                0.0017,
+                systemMock.system(-2.428 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -2.428 - 100 * PERIOD)"
         );
     }
 
@@ -380,6 +547,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void test9F1100Period(){
+        assertEquals(
+                0.0317,
+                systemMock.system(-2.4893 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -2.4893 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void testMinusPiF1(){
         assertEquals(
                 Double.NaN,
@@ -396,6 +573,16 @@ public class FirstLayerTest {
                 systemMock.system(-Math.PI - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -Math.PI - PERIOD)"
+        );
+    }
+
+    @Test
+    void testMinusPiF1100Period(){
+        assertEquals(
+                Double.NaN,
+                systemMock.system(-Math.PI - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -Math.PI - 100 * PERIOD)"
         );
     }
 
@@ -420,6 +607,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void testMinusPiEpsilonF1100Period(){
+        assertEquals(
+                Double.POSITIVE_INFINITY,
+                systemMock.system(-Math.PI - EPSILON - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -Math.PI - EPSILON - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test10F1(){
         assertEquals(
                 3.715,
@@ -436,6 +633,16 @@ public class FirstLayerTest {
                 systemMock.system(-2.6175 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -2.6175 - PERIOD)"
+        );
+    }
+
+    @Test
+    void test10F1100Period(){
+        assertEquals(
+                3.715,
+                systemMock.system(-2.6175 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -2.6175 - 100 * PERIOD)"
         );
     }
 
@@ -460,6 +667,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void test11F1100Period(){
+        assertEquals(
+                3.715,
+                systemMock.system(-2.6175 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -2.6175 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test12F1(){
         assertEquals(
                 3.801,
@@ -476,6 +693,16 @@ public class FirstLayerTest {
                 systemMock.system(-3.665 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -3.665 - PERIOD)"
+        );
+    }
+
+    @Test
+    void test12F1100Period(){
+        assertEquals(
+                3.801,
+                systemMock.system(-3.665 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -3.665 - 100 * PERIOD)"
         );
     }
 
@@ -500,6 +727,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void test13F1100Period(){
+        assertEquals(
+                0.0243,
+                systemMock.system(-3.8 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -3.8 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test14F1(){
         assertEquals(
                 0.0,
@@ -516,6 +753,16 @@ public class FirstLayerTest {
                 systemMock.system(-4.046 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -4.046 - PERIOD)"
+        );
+    }
+
+    @Test
+    void test14F1100Period(){
+        assertEquals(
+                0.0,
+                systemMock.system(-4.046 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -4.046 - 100 * PERIOD)"
         );
     }
 
@@ -540,6 +787,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void test15F1100Period(){
+        assertEquals(
+                -0.0475,
+                systemMock.system(-4.4 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -4.4 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test16F1(){
         assertEquals(
                 -3.87,
@@ -556,6 +813,16 @@ public class FirstLayerTest {
                 systemMock.system(-4.615 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -4.615 - PERIOD)"
+        );
+    }
+
+    @Test
+    void test16F1100Period(){
+        assertEquals(
+                -3.87,
+                systemMock.system(-4.615 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -4.615 - 100 * PERIOD)"
         );
     }
 
@@ -580,6 +847,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void testMinusOneAndHalfPiF1100Period(){
+        assertEquals(
+                Double.NaN,
+                systemMock.system(-1.5 * Math.PI/2 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -1.5 * Math.PI/2 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void testMinusOneAndHalfPiEpsilonF1(){
         assertEquals(
                 Double.POSITIVE_INFINITY,
@@ -596,6 +873,16 @@ public class FirstLayerTest {
                 systemMock.system(-1.5 * Math.PI/2 - EPSILON - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -1.5 * Math.PI/2 - EPSILON - PERIOD)"
+        );
+    }
+
+    @Test
+    void testMinusOneAndHalfPiEpsilonF1100Period(){
+        assertEquals(
+                Double.POSITIVE_INFINITY,
+                systemMock.system(-1.5 * Math.PI/2 - EPSILON - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -1.5 * Math.PI/2 - EPSILON - 100 * PERIOD)"
         );
     }
 
@@ -620,6 +907,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void testMinusOneAndHalfPiDivTwoF1100Period(){
+        assertEquals(
+                Double.POSITIVE_INFINITY,
+                systemMock.system(-1.5 * Math.PI/2 - EPSILON - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -1.5 * Math.PI/2 - EPSILON - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test17F1(){
         assertEquals(
                 25.61,
@@ -636,6 +933,16 @@ public class FirstLayerTest {
                 systemMock.system(-4.783 - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -4.783 - PERIOD)"
+        );
+    }
+
+    @Test
+    void test17F1100Period(){
+        assertEquals(
+                25.61,
+                systemMock.system(-4.783 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -4.783 - 100 * PERIOD)"
         );
     }
 
@@ -660,6 +967,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void test18F1100Period(){
+        assertEquals(
+                21.496,
+                systemMock.system(-4.859 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -4.859 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void test19F1(){
         assertEquals(
                 25.579,
@@ -680,6 +997,16 @@ public class FirstLayerTest {
     }
 
     @Test
+    void test19F1100Period(){
+        assertEquals(
+                25.579,
+                systemMock.system(-4.991 - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -4.991 - 100 * PERIOD)"
+        );
+    }
+
+    @Test
     void testMinusTwoF1(){
         assertEquals(
                 Double.POSITIVE_INFINITY,
@@ -696,6 +1023,15 @@ public class FirstLayerTest {
                 systemMock.system(-2*Math.PI + EPSILON - PERIOD),
                 PRECISION,
                 "Layer 1: [F1] (х = -2*Math.PI + EPSILON - PERIOD)"
+        );
+    }
+    @Test
+    void testMinusTwoF1100Period(){
+        assertEquals(
+                Double.POSITIVE_INFINITY,
+                systemMock.system(-2*Math.PI + EPSILON - 100 * PERIOD),
+                PRECISION,
+                "Layer 1: [F1] (х = -2*Math.PI + EPSILON - 100 * PERIOD)"
         );
     }
 
