@@ -9,12 +9,12 @@ public class SystemOfEquations {
 /*  x <= 0 : (((((tan(x) + csc(x)) * cos(x)) ^ 3) ^ 3) / (((cot(x) / sec(x)) + sin(x)) * cos(x)))
     x > 0 : (((((ln(x) * ln(x)) + log_10(x)) / ln(x)) * (log_2(x) - (log_10(x) + ln(x)))) ^ 2)*/
 
-    private static double sin(double x, double current, int n, double result) {
+    private double sin(double x, double current, int n, double result) {
         if (abs(current) < PRECISION) return result;
         return sin(x, current * (-x * x / (2.0 * n * (2.0 * n + 1.0))), n + 1, result + current);
     }
 
-    public static double sin(double x) {
+    public double sin(double x) {
         double x1 = x % (2 * PI);
         if (abs(abs(x1) - PI) < PRECISION || abs(abs(x1) - 2 * PI) < PRECISION || abs(abs(x1) - 0.0) < PRECISION) {
             return 0.0;
@@ -22,7 +22,7 @@ public class SystemOfEquations {
         return sin(x1, x1, 1, 0);
     }
 
-    public static double cos(double x) {
+    public double cos(double x) {
         int sign;
         if (((x % (2.0 * PI)) < PI / 2) && ((x % (2.0 * PI)) > -PI / 2) ||
                 ((x % (2.0 * PI)) < -1.5 * PI) || ((x % (2.0 * PI)) > 1.5 * PI)
@@ -34,23 +34,23 @@ public class SystemOfEquations {
         return sqrt(1.0 - sin(x) * sin(x)) * sign;
     }
 
-    public static double tan(double x) {
-        return sin(x) / SystemOfEquations.cos(x);
+    public double tan(double x) {
+        return sin(x) / cos(x);
     }
 
-    public static double csc(double x) {
+    public double csc(double x) {
         return 1 / sin(x);
     }
 
-    public static double cot(double x) {
-        return 1 / SystemOfEquations.tan(x);
+    public double cot(double x) {
+        return 1 / tan(x);
     }
 
-    public static double sec(double x) {
-        return 1 / SystemOfEquations.cos(x);
+    public double sec(double x) {
+        return 1 / cos(x);
     }
 
-    public static double ln(double x) {
+    public double ln(double x) {
         if (x <= 0)
             return Double.NaN;
         double x1 = (x - 1) / (x + 1);
@@ -65,11 +65,11 @@ public class SystemOfEquations {
         return result;
     }
 
-    public static double log_2(double x) {
+    public double log_2(double x) {
         return ln(x) / ln(2.0);
     }
 
-    public static double log_10(double x) {
+    public double log_10(double x) {
         return ln(x) / ln(10.0);
     }
 
