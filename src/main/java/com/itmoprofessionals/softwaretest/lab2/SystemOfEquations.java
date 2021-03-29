@@ -92,11 +92,12 @@ public class SystemOfEquations {
             StringBuilder sb = new StringBuilder();
         double cur;
             cur = from;
-            sb.append("X, Y, sin(X), cos(X), tan(X), cot(X), sec(X), csc(X) \n");
+            sb.append("X, Y, sin(X), cos(X), tan(X), cot(X), sec(X), csc(X), ln(X), log_2(X), log_10(X) \n");
         while (cur < to) {
             sb.append(cur).append(", ").append(system(cur)).append(", ").append(sin(cur)).append(", ").append(cos(cur))
                     .append(", ").append(tan(cur)).append(", ").append(cot(cur)).append(", ").append(sec(cur)).append(", ")
-                    .append(csc(cur)).append("\n");
+                    .append(csc(cur)).append(ln(cur)).append(", ").append(log_2(cur)).append(", ").append(log_10(cur))
+                    .append("\n");
             cur += step;
         }
         writer.write(sb.toString());
