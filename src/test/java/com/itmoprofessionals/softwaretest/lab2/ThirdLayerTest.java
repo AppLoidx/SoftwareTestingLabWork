@@ -907,7 +907,7 @@ public class ThirdLayerTest {
     @Test
     void test1F2() {
         assertEquals(
-                0.04380771800821347,
+                0.037754813117587493,
                 systemMock.system(0.0065),
                 PRECISION,
                 "Layer 2: [F2] (х = 0.0065)."

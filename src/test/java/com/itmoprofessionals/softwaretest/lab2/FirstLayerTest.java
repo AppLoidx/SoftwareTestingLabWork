@@ -147,7 +147,7 @@ public class FirstLayerTest {
         when(systemMock.system(-2*Math.PI + EPSILON - PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(-2*Math.PI + EPSILON - 100 * PERIOD)).thenReturn(Double.POSITIVE_INFINITY);
 
-        /////////////////////////////// todo xpath locator
+        ///////////////////////////////
 
         when(systemMock.system(0 + EPSILON)).thenReturn(Double.POSITIVE_INFINITY);
         when(systemMock.system(0.05)).thenReturn(0.00416);
