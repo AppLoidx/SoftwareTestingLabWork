@@ -96,7 +96,7 @@ public class SystemOfEquations {
         while (cur < to) {
             sb.append(cur).append(", ").append(system(cur)).append(", ").append(sin(cur)).append(", ").append(cos(cur))
                     .append(", ").append(tan(cur)).append(", ").append(cot(cur)).append(", ").append(sec(cur)).append(", ")
-                    .append(csc(cur)).append(ln(cur)).append(", ").append(log_2(cur)).append(", ").append(log_10(cur))
+                    .append(csc(cur)).append(", ").append(ln(cur)).append(", ").append(log_2(cur)).append(", ").append(log_10(cur))
                     .append("\n");
             cur += step;
         }
