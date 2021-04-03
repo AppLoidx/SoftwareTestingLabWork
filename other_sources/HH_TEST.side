@@ -2,7 +2,7 @@
   "id": "d89f894e-10b7-4f84-b7f3-4ed9cbca1eb4",
   "version": "2.0",
   "name": "HH_TEST",
-  "url": "https://spb.hh.ru",
+  "url": "https://spb.hh.ru/",
   "tests": [{
     "id": "2523b463-3008-4cc1-bdb2-4ba1f09a906f",
     "name": "CREATE_PORTFOLIO__NOT_AUTHORIZED",
@@ -62,15 +62,15 @@
       ],
       "value": ""
     }, {
-      "id": "c96f0748-a1c8-4959-a5b0-247a4df2f149",
+      "id": "d78a4780-ffa6-47f6-a71e-2f72bb7c788b",
       "comment": "",
-      "command": "click",
-      "target": "xpath=//div[2]/div/div/div/div/div[2]/div/button",
+      "command": "waitForElementVisible",
+      "target": "css=.supernova-dropdown-section_main-content",
       "targets": [
-        ["css=.supernova-navi-item:nth-child(2) .supernova-link-switch", "css:finder"],
-        ["xpath=//div[2]/div/div/div/div/div[2]/div/button", "xpath:position"]
+        ["css=.supernova-dropdown-section_main-content", "css:finder"],
+        ["xpath=//div[10]/div/div[2]/div/div", "xpath:position"]
       ],
-      "value": ""
+      "value": "3000"
     }, {
       "id": "c75e57a8-92f3-4403-a630-b110e97f7087",
       "comment": "",
