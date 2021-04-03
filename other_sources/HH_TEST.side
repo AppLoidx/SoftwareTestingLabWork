@@ -1,0 +1,530 @@
+{
+  "id": "d89f894e-10b7-4f84-b7f3-4ed9cbca1eb4",
+  "version": "2.0",
+  "name": "HH_TEST",
+  "url": "https://spb.hh.ru",
+  "tests": [{
+    "id": "2523b463-3008-4cc1-bdb2-4ba1f09a906f",
+    "name": "CREATE_PORTFOLIO__NOT_AUTHORIZED",
+    "commands": [{
+      "id": "7c794865-7755-486b-acf3-735e30e026cc",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6dbf1b86-4089-4c62-b2af-7471f8f9f7f3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c52643f2-da4f-4c50-8910-6224875c07b1",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//a[contains(text(),'Создать резюме')])[2]",
+      "targets": [
+        ["linkText=Создать резюме", "linkText"],
+        ["css=.supernova-navi-item:nth-child(4) > .supernova-button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Создать резюме')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/account/signup?backurl=%2Fapplicant%2Fresumes%2Fnew&from=header_new')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div/div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "24fac7b2-694a-4941-a436-35dbd8534b3e",
+    "name": "MOVE_TO_QA_FROM_MAIN_PAGE",
+    "commands": [{
+      "id": "465c4ccc-73e2-4c4d-8d93-00ba5ebef36e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f8e4fa1-76cf-4862-b8fa-491535b5bb41",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d40e2ea7-6336-4f94-bfad-2daa2fcf283c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.supernova-navi-item:nth-child(2) .supernova-link-switch",
+      "targets": [
+        ["css=.supernova-navi-item:nth-child(2) .supernova-link-switch", "css:finder"],
+        ["xpath=//div[2]/div/div/div/div/div[2]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c96f0748-a1c8-4959-a5b0-247a4df2f149",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[2]/div/div/div/div/div[2]/div/button",
+      "targets": [
+        ["css=.supernova-navi-item:nth-child(2) .supernova-link-switch", "css:finder"],
+        ["xpath=//div[2]/div/div/div/div/div[2]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c75e57a8-92f3-4403-a630-b110e97f7087",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Вопросы и ответы",
+      "targets": [
+        ["linkText=Вопросы и ответы", "linkText"],
+        ["css=.supernova-dropdown-option:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Вопросы и ответы')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://feedback.hh.ru/knowledge-base/articles/applicant?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_header_new')]", "xpath:href"],
+        ["xpath=//div[7]/div/div[2]/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Вопросы и ответы')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win7727",
+      "windowTimeout": 2000
+    }, {
+      "id": "e839c8d9-ff33-40fc-9e83-73e192d5dc47",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win7727}",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "5df37414-95bf-4ef4-b9c1-293d85cd10b9",
+    "name": "CHANGE_CITY",
+    "commands": [{
+      "id": "7baf3bda-f7df-4683-beee-59938fe20bd7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb8eba15-e94a-47dc-b79f-83849036084c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "180abe5e-08b1-4748-9437-7773739bc869",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button/div",
+      "targets": [
+        ["css=.supernova-navi-item_area-switcher-button", "css:finder"],
+        ["xpath=//button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9c188f9-832e-4795-97d9-3cdca8a9674f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Москва",
+      "targets": [
+        ["linkText=Москва", "linkText"],
+        ["css=.bloko-column:nth-child(2) > .area-switcher-column .area-switcher-city:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Москва')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'https://hh.ru/?customDomain=1')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Москва')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "7ae90aa2-4cd9-4961-bf6e-01de027db10b",
+    "name": "OFFER_SEARCH",
+    "commands": [{
+      "id": "1b4c1b2f-3937-4f1a-8a73-094678230249",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a546fc87-505a-4d7e-a593-6d3ce5e8f4d0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6632371-2a27-4323-9afa-4a85860ff0e6",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@name='text']",
+      "targets": [
+        ["name=text", "name"],
+        ["css=.HH-Supernova-Search-Input", "css:finder"],
+        ["xpath=//input[@name='text']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60390b94-6465-4c3c-a730-4af235eb43d7",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@name='text']",
+      "targets": [
+        ["name=text", "name"],
+        ["css=.HH-Supernova-Search-Input", "css:finder"],
+        ["xpath=//input[@name='text']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "efc95483-8aec-44cf-bac1-69f5e4cdef48",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "xpath=//span/a/span",
+      "targets": [
+        ["css=.bloko-icon_24", "css:finder"],
+        ["xpath=//span/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "580a9382-49a0-4bf8-a011-08a05b679a22",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "xpath=//span/a/span",
+      "targets": [
+        ["css=.bloko-icon_24", "css:finder"],
+        ["xpath=//span/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cf8f70e-210b-4cd3-ad0b-30a5a8b8eb48",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@name='text']",
+      "targets": [
+        ["name=text", "name"],
+        ["css=.HH-Supernova-Search-Input", "css:finder"],
+        ["xpath=//input[@name='text']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Java"
+    }, {
+      "id": "4bb53f7a-ef0c-4a91-ae56-1d200038cfdd",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Найти работу')]",
+      "targets": [
+        ["css=.supernova-search-submit-text", "css:finder"],
+        ["xpath=//div[2]/button/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Найти работу')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f5997037-80a1-4fe3-91ee-61eb3b267101",
+    "name": "NEWS_ON_THE_MAIN_PAGE",
+    "commands": [{
+      "id": "fccf715b-8168-4db8-992d-02c90b6eb6b4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "835441d7-d8b7-4863-9406-12d8a79ce986",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9d6dcee-ce88-434c-bb7b-5545d555df9b",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[3]/div/div/ul/li/a",
+      "targets": [
+        ["linkText=«По характеру я... самодур»: нескучные цитаты из вакансий", "linkText"],
+        ["css=.bloko-column:nth-child(3) .news-box-item:nth-child(1) > .news-box-item__link", "css:finder"],
+        ["xpath=//a[contains(text(),'«По характеру я... самодур»: нескучные цитаты из вакансий')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/article/28331')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'«По характеру я... самодур»: нескучные цитаты из вакансий')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfc2d125-4d1f-4752-b26d-05fe7dee9492",
+      "comment": "",
+      "command": "executeScript",
+      "target": "history.back()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0e18e4d-a69a-43a9-9b45-cf0257601737",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[3]/div/div/ul/li[2]/a",
+      "targets": [
+        ["linkText=Изменения на рынке труда Санкт-Петербурга за 2020 год", "linkText"],
+        ["css=.bloko-column:nth-child(3) .news-box-item:nth-child(2) > .news-box-item__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Изменения на рынке труда Санкт-Петербурга за 2020 год')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/article/28285')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Изменения на рынке труда Санкт-Петербурга за 2020 год')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "880e740a-4334-48dc-ba2d-0c1f0590a0c7",
+      "comment": "",
+      "command": "executeScript",
+      "target": "history.back()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a3e5135-3458-40c1-a5d5-5dc294ccaa06",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[3]/div/div/ul/li[3]/a",
+      "targets": [
+        ["linkText=Рынок труда в сфере судостроения: итоги 2020 года", "linkText"],
+        ["css=.bloko-column:nth-child(3) .news-box-item:nth-child(3) > .news-box-item__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Рынок труда в сфере судостроения: итоги 2020 года')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/article/28314?from=empcabinet')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Рынок труда в сфере судостроения: итоги 2020 года')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30bf8d87-a2fa-4271-a6b6-b732de6a7647",
+      "comment": "",
+      "command": "executeScript",
+      "target": "history.back()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "173fc54b-b9a0-438c-a08c-461ab42e6c28",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,3298)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef87975a-3e46-4236-af12-22a5748db208",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[3]/div/div/ul/li[4]/a",
+      "targets": [
+        ["linkText=Леспром и деревообработка: итоги 2020 года", "linkText"],
+        ["css=.bloko-column:nth-child(3) .news-box-item:nth-child(4) > .news-box-item__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Леспром и деревообработка: итоги 2020 года')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/article/28315?from=empcabinet')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Леспром и деревообработка: итоги 2020 года')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "33d30cf4-1af5-4bbf-ac9a-3508afcd8e9a",
+    "name": "AUTH_PAGE",
+    "commands": [{
+      "id": "62c3add4-1bab-4dcf-8c51-9493a5fbccda",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ecc60c0c-6635-48ab-a0eb-9be9edefe157",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "534329e8-b762-48a0-ac2f-a68e315dca4b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Войти",
+      "targets": [
+        ["linkText=Войти", "linkText"],
+        ["css=.supernova-navi_dashboard > .supernova-navi-item:nth-child(5) > .supernova-button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Войти')])[3]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/account/login?backurl=%2F')])[3]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div/div[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "81771296-5cb3-4f23-9428-506743f91eaf",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=(//input[@name='username'])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ff6ee76-cecc-4700-bfca-37a6656663c2",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=(//input[@name='username'])[2]",
+      "targets": [
+        ["css=.bloko-form-item > .bloko-input", "css:finder"],
+        ["xpath=(//input[@name='username'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "+7 (914) 306-11-11"
+    }, {
+      "id": "1d338355-4198-471e-ab87-7f5e18cf8d2e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//span/input",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "394f029a-201d-4fa8-9861-e0ecb24ab73a",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//span/input",
+      "targets": [
+        ["css=.bloko-input_password", "css:finder"],
+        ["xpath=(//input[@value='black9112199'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div/div/form/div[2]/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "123123123"
+    }]
+  }, {
+    "id": "84cbbc46-c8e3-46cf-b6da-3b7181219d61",
+    "name": "INVALID_AUTH_MESSAGE",
+    "commands": [{
+      "id": "3fe74f83-175b-4665-adba-6693a527b501",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca40c335-4fc9-49bd-873b-8177c4fe06b6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd9a7b2c-2cf2-441a-98ca-bff56678fa6b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Войти",
+      "targets": [
+        ["linkText=Войти", "linkText"],
+        ["css=.supernova-navi_dashboard > .supernova-navi-item:nth-child(5) > .supernova-button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Войти')])[3]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/account/login?backurl=%2F')])[3]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div/div[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3254da4a-97be-4f34-a7c4-b059f5bd583f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=(//input[@name='username'])[2]",
+      "targets": [
+        ["css=.bloko-form-item > .bloko-input", "css:finder"],
+        ["xpath=(//input[@name='username'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "123123"
+    }, {
+      "id": "d745bdaa-32c4-44ba-beae-406e3b09aee1",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[3]/div/div/div/div",
+      "targets": [
+        ["css=div:nth-child(1) > .bloko-columns-wrapper > .row-content > .bloko-column", "css:finder"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f18bc9fc-14f9-45b0-8af2-af2e37921c6c",
+      "comment": "",
+      "command": "type",
+      "target": "css=.bloko-input_password",
+      "targets": [],
+      "value": "123123123"
+    }, {
+      "id": "7e7c15f6-9be8-4026-8725-e3198ea62d10",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Войти в личный кабинет')]",
+      "targets": [
+        ["css=.bloko-form-row > .bloko-button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти в личный кабинет')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "550eb149-0260-4eba-b4f9-8e9276df3bb2",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.bloko-form-row > .bloko-button",
+      "targets": [
+        ["css=.bloko-form-row > .bloko-button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти в личный кабинет')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "70664416-6f13-4c45-83da-92d61e98a43e",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.bloko-form-row > .bloko-button",
+      "targets": [
+        ["css=.bloko-form-row > .bloko-button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти в личный кабинет')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a4e3762-485b-49c5-a7b0-fcccbfbed6b6",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.account-login-recaptcha",
+      "targets": [
+        ["css=.account-login-recaptcha", "css:finder"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div/div/form/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//form/div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80574ed1-a998-4a74-af71-d5109031933f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.bloko-form-error",
+      "targets": [
+        ["css=.bloko-form-error", "css:finder"],
+        ["xpath=//div[@id='HH-React-Root']/div/div/div/div/div/form/div[5]/div", "xpath:idRelative"],
+        ["xpath=//form/div[5]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2b58690f-296e-4e27-84b6-1f77e9498ff8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2523b463-3008-4cc1-bdb2-4ba1f09a906f"]
+  }],
+  "urls": ["https://spb.hh.ru/"],
+  "plugins": []
+}
