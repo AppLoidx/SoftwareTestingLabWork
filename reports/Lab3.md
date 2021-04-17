@@ -53,6 +53,7 @@
 
 ![](Lab3/selenium-checklist.png)
 ![](Lab3/selenium-fail-auth-checklist.png)
+![](Lab3/sochi_test.jpg)
 
 
 ### Пример генерации кода на Java
